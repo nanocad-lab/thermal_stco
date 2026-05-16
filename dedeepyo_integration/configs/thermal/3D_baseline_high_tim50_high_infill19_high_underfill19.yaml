@@ -1,0 +1,8 @@
+name: 3D_baseline_high_tim50_high_infill19_high_underfill19
+system_name: 3D_1GPU
+htc: 7
+tim_cond: 50
+infill_cond: 19
+underfill_cond: 19
+hbm_stack_height: 8
+dummy_si: true

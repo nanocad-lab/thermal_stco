@@ -1,0 +1,63 @@
+<!--
+    Filename: heatsink_definitions.xml
+    Author: Dedeepyo Ray
+    Affiliation: University of California, Los Angeles
+    Email: ray25dedeepyo99@ucla.edu 
+    
+    name : Name of bonding.
+    diameter : Diameter of the bonding BGA ball. Used only if shape is sphere. Specified in um.
+    shape : Shape of the bonding BGA ball.
+    cross_section_area : Cross section area of the bonding BGA ball. Needs to be mentioned and is used only if shape is not sphere. Specified in um^2.
+    pitch : Pitch of the bonding BGA balls. Specified in um. Assuming a single pitch in both x and y directions. Centre to centre distance.
+    material : Material of the bonding BGA ball.
+    offset : Offset of the centre of the bonding BGA ball from the starting corner individually in both direction (x & y). Specified in um. Assuming a single offset in both x and y directions.
+    height : Height of the bonding BGA ball. Used only if the ball is a cube or a cuboid. Specified in um.
+
+    Still in progress.-->
+
+<bondings>
+    <bonding
+        name="bonding_bga_ball"
+        diameter="250"
+        shape="sphere"
+        cross_section_area=""
+        height="250"
+        pitch="500"
+        material="SnPb 67/37"
+        offset ="0.5"
+        >
+    </bonding>
+    <bonding
+        name="bonding_Cu_pillar"
+        diameter="5.0"
+        shape="cylinder"
+        cross_section_area=""
+        height="10.0"
+        pitch="10.0"
+        material="Cu-Foil"
+        offset ="0.0"
+        >
+    </bonding>
+    <bonding
+        name="bonding_2"
+        diameter="0.0005"
+        shape="sphere"
+        cross_section_area=""
+        height="0.0005"
+        pitch="0.002"
+        material="Cu-Foil"
+        offset ="0.0005"
+        >
+    </bonding>
+    <bonding
+        name="bonding_1"
+        diameter="0.005"
+        shape="circle"
+        cross_section_area=""
+        height="0.005"
+        pitch="0.010"
+        material="Cu-Foil"
+        offset ="0.005"
+        >
+    </bonding>
+</bondings>

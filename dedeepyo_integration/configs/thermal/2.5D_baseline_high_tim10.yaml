@@ -1,0 +1,8 @@
+name: 2.5D_baseline_high_tim10
+system_name: 2p5D_1GPU
+htc: 7
+tim_cond: 10
+infill_cond: 1.6
+underfill_cond: 1.6
+hbm_stack_height: 8
+dummy_si: false

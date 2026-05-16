@@ -1,0 +1,18 @@
+# Minimal repo (thermal + Rapid-LLM snapshot)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+.venv/
+**/output/
+out_therm/
+**/log/
+dedeepyo_integration/state_cache.sqlite
+dedeepyo_integration/thermal_suite_results*.csv
+
+# Optional: keep archived ECTC CSVs and calibration_data*.csv tracked — do not blanket-ignore *.csv
+*.png
+*.svg
+.DS_Store
+.nfs*

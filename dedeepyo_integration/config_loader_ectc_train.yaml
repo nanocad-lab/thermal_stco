@@ -1,0 +1,49 @@
+# Optional alternate YAML: identical layout to config_loader.yaml with training models selected and
+# extra 16-high *ideal* thermal rows for normalization. Prefer editing config_loader.yaml
+# model_configs (same command).
+
+## ECTC training grid (Llama train configs + thermal cases needed for normalization)
+
+backend_kind: rapid
+backend_workers: 1
+speculative_misses: 0
+grid_workers: 32
+persistent_cache: state_cache.sqlite
+rapid_python_bin: python3
+
+hardware_config: Rapid-LLM/configs/hardware-config/a100_80GB_legacy_thermal_port.yaml
+
+model_configs:
+  - Rapid-LLM/configs/model-config/Llama2-7B_train_2048_thermal.yaml
+  - Rapid-LLM/configs/model-config/Llama3.1-8B_train_2048_thermal.yaml
+
+thermal_configs:
+  - configs/thermal/2.5D_baseline.yaml
+  - configs/thermal/3D_baseline.yaml
+  - configs/thermal/3D_top_baseline.yaml
+  - configs/thermal/2.5D_no_throttle.yaml
+  - configs/thermal/3D_no_throttle.yaml
+  - configs/thermal/2.5D_baseline_high_tim50.yaml
+  - configs/thermal/3D_baseline_high_tim50.yaml
+  - configs/thermal/3D_top_baseline_high_tim50.yaml
+  - configs/thermal/2.5D_baseline_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_baseline_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_top_baseline_high_infill19_high_underfill19.yaml
+  - configs/thermal/2.5D_baseline_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_baseline_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_top_baseline_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/2.5D_baseline_high_htc10.yaml
+  - configs/thermal/3D_baseline_high_htc10.yaml
+  - configs/thermal/3D_top_baseline_high_htc10.yaml
+  - configs/thermal/2.5D_baseline_high_htc10_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_baseline_high_htc10_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_top_baseline_high_htc10_high_tim50_high_infill19_high_underfill19.yaml
+  # 16-HBM-stack baselines plus ideals for ECTC5-style normalization
+  - configs/thermal/2.5D_baseline_16high.yaml
+  - configs/thermal/3D_baseline_16high.yaml
+  - configs/thermal/3D_top_baseline_16high.yaml
+  - configs/thermal/2.5D_baseline_high_htc10_high_tim50_high_infill19_high_underfill19_16high.yaml
+  - configs/thermal/3D_baseline_high_htc10_high_tim50_high_infill19_high_underfill19_16high.yaml
+  - configs/thermal/3D_top_baseline_high_htc10_high_tim50_high_infill19_high_underfill19_16high.yaml
+
+results_csv: thermal_suite_train_for_ectc.csv

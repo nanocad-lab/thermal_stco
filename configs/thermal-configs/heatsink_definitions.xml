@@ -1,0 +1,180 @@
+<!--
+    Filename: heatsink_definitions.xml
+    Author: Dedeepyo Ray
+    Affiliation: University of California, Los Angeles
+    Email: ray25dedeepyo99@ucla.edu 
+    
+    Still in progress.
+    Very Anemoi tool specific as of now.
+    MATLAB takes resistivity, specific heat, width, fin_height, fin_thickness, fin_count and thermal conductivity as inputs. length is not required as it is assumed to be equal to width.
+    Icepak takes base_height, overall_height, start_x, start_y, start_z, end_x (or width), end_y (or length), end_z (or height), plane, flow direction (Y), detailed fin type (extruded), fin_count, fin_thickness, fin_offset, flow / thermal data, pressure loss, interface.
+    Heatsink must not have lowest priority in Icepak. 
+    
+    The parameters are to be decided as follows.
+    name : Name of the heatsink setup.
+    material : Material of the heatsink body.
+    fin_thickness : Thickness of each fin in mm.
+    fin_height : Height of the fins in mm.
+    fin_count : Number of fins.
+    fin_offset : Offset of the fin from the starting corner in mm.
+    base_thickness : Thickness / dz of the solid portion of the heatsink without the fins in mm.
+    base_width : Width of the heatsink in mm. 
+    base_length : Length of the heatsink in mm. 
+    hc : Heat Transfer Coefficient (W / (m^2 * K)).
+    fluid_speed : Fluid speed in case of cooling by forced flow else 0.00 .
+    bind_to_ambient : Specify if heatsink has to attach to ambient temperature.
+    cooled_by : Specify the coolant fluid.-->
+    
+
+<heatsinks>
+    <heatsink name="heatsink_general" 
+        material="Cu-Foil" 
+        fin_thickness="1" 
+        fin_height="20" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="100"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "air"
+        >
+    </heatsink>
+    <heatsink name="heatsink_air_free_convection" 
+        material="Cu-Foil" 
+        fin_thickness="1" 
+        fin_height="20" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="16.1"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "air"
+        >
+    </heatsink>
+    <heatsink name="heatsink_air_cooled" 
+        material="Cu-Foil" 
+        fin_thickness="1" 
+        fin_height="20" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc=""
+        fluid_speed="15.00"
+        bind_to_ambient="False"
+        cooled_by = "air"
+        >
+    </heatsink>
+    <heatsink name="heatsink_water_cooled" 
+        material="Cu-Foil" 
+        fin_thickness="0.0" 
+        fin_height="0.0" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="7000"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "water"
+        >
+    </heatsink>
+    <heatsink name="heatsink_water_cooled_higherHTC" 
+        material="Cu-Foil" 
+        fin_thickness="0.0" 
+        fin_height="0.0" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="10000"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "water"
+        >
+    </heatsink>
+    <heatsink name="heatsink_two_phase" 
+        material="Cu-Foil" 
+        fin_thickness="1" 
+        fin_height="20" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="100"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "two_phase"
+        >
+    </heatsink>
+    <heatsink name="heatsink_water_free_convection" 
+        material="Cu-Foil" 
+        fin_thickness="0.0" 
+        fin_height="0.0" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="7000"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "water"
+        >
+    </heatsink>
+    <heatsink name="heatsink_oil_free_convection" 
+        material="Cu-Foil" 
+        fin_thickness="1" 
+        fin_height="20" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="100"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "water"
+        >
+    </heatsink>
+    <heatsink name="heatsink_oil_cooled" 
+        material="Cu-Foil" 
+        fin_thickness="1" 
+        fin_height="20" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="100"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "oil"
+        >
+    </heatsink>
+    <heatsink name="heatsink_water_cooled_new_material" 
+        material="Polymer1" 
+        fin_thickness="0.0" 
+        fin_height="0.0" 
+        fin_count=""
+        fin_offset="" 
+        base_thickness="3" 
+        base_width="242" 
+        base_length="112"
+        hc="7000"
+        fluid_speed=""
+        bind_to_ambient="False"
+        cooled_by = "water"
+        >
+    </heatsink>
+</heatsinks>

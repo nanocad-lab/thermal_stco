@@ -1,0 +1,7 @@
+model_param:
+  mode: GEMM
+  M: 4096
+  K: 524288
+  N: 2048
+  backward: true
+  gemm_shard_axis: row

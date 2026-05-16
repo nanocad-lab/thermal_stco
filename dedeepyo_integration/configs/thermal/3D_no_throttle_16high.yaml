@@ -1,0 +1,9 @@
+name: 3D_no_throttle_16high
+system_name: 3D_1GPU
+htc: 7
+tim_cond: 5
+infill_cond: 1.6
+underfill_cond: 1.6
+hbm_stack_height: 16
+dummy_si: true
+no_throttle: true

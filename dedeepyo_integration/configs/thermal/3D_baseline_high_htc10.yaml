@@ -1,0 +1,8 @@
+name: 3D_baseline_high_htc10
+system_name: 3D_1GPU
+htc: 10
+tim_cond: 5
+infill_cond: 1.6
+underfill_cond: 1.6
+hbm_stack_height: 8
+dummy_si: true

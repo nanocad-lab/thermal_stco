@@ -1,0 +1,51 @@
+backend_kind: rapid
+backend_workers: 1 # leave at 1
+speculative_misses: 0 # leave at 0
+grid_workers: 32 # actual num workers that counts - keep more than grid runs (model_configs * thermal_configs)
+persistent_cache: state_cache.sqlite
+# Rapid-LLM is invoked via this interpreter — use your activated venv (e.g. `which python3`).
+rapid_python_bin: python3
+
+# One hardware config for all runs in this suite.
+hardware_config: Rapid-LLM/configs/hardware-config/a100_80GB_legacy_thermal_port.yaml
+
+# Model grid for each thermal case. Training and inference use the SAME command:
+#   python3 thermal_suite.py --config config_loader.yaml
+# Toggle only this list: comment exactly one of the two pairs below and leave the other uncommented.
+model_configs:
+  # --- Training (Llama *_train_2048_thermal.yaml) ---
+  # - Rapid-LLM/configs/model-config/Llama2-7B_train_2048_thermal.yaml
+  # - Rapid-LLM/configs/model-config/Llama3.1-8B_train_2048_thermal.yaml
+
+  # --- Inference (Llama *_inf_2048_1792_thermal.yaml) ---
+  - Rapid-LLM/configs/model-config/Llama2-7B_inf_2048_1792_thermal.yaml
+  - Rapid-LLM/configs/model-config/Llama3.1-8B_inf_2048_1792_thermal.yaml
+
+# Thermal grid for each model. Add new THERMAL cases here.
+thermal_configs:
+  - configs/thermal/2.5D_baseline.yaml
+  - configs/thermal/3D_baseline.yaml
+  - configs/thermal/3D_top_baseline.yaml
+  - configs/thermal/2.5D_no_throttle.yaml
+  - configs/thermal/3D_no_throttle.yaml
+  - configs/thermal/2.5D_baseline_high_tim50.yaml
+  - configs/thermal/3D_baseline_high_tim50.yaml
+  - configs/thermal/3D_top_baseline_high_tim50.yaml
+  - configs/thermal/2.5D_baseline_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_baseline_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_top_baseline_high_infill19_high_underfill19.yaml
+  - configs/thermal/2.5D_baseline_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_baseline_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_top_baseline_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/2.5D_baseline_high_htc10.yaml
+  - configs/thermal/3D_baseline_high_htc10.yaml
+  - configs/thermal/3D_top_baseline_high_htc10.yaml
+  - configs/thermal/2.5D_baseline_high_htc10_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_baseline_high_htc10_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/3D_top_baseline_high_htc10_high_tim50_high_infill19_high_underfill19.yaml
+  - configs/thermal/2.5D_baseline_16high.yaml
+  - configs/thermal/3D_baseline_16high.yaml
+  - configs/thermal/3D_top_baseline_16high.yaml
+
+# runs dense grid of model_configs * thermal_configs and results are saved to csv.
+results_csv: thermal_suite_results_no_throttle_2cases.csv

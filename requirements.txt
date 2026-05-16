@@ -1,0 +1,22 @@
+# DeepFlow / ECTC workflow — consolidated Python deps (pinned loosely for portability).
+#
+# Thermal + calibration path (repository root scripts)
+click>=8.0
+matplotlib>=3.7
+numpy>=1.23
+pandas>=2.0
+PyYAML>=6.0
+scikit-learn>=1.2
+seaborn>=0.12
+tqdm>=4.60
+
+# Rapid-LLM timing backend (heavy; protobuf / graph tooling). Install from:
+#   pip install -r dedeepyo_integration/Rapid-LLM/requirements.txt
+# Optional Scotch bindings for some AstraSim modes:
+#   scotchpy64>=1.0.1
+
+# Dash GUI (thermal_analysis_gui / optional dashboards)
+#   pip install -r requirements_gui.txt
+
+# Vendor Anemoi client (thermal_simulators/anemoi_sim.py). Install SDK from vendor or:
+#   pip install -r anemoi_pylib/python/requirements.txt
